@@ -11,7 +11,7 @@ public class RotateAroundCam : MonoBehaviour
     //The distance from the camera to the object we look at
 	float distanceToObject = 50f;
     //The min and max distance for zooming
-    float minDistance = 10f;
+    float minDistance = 5f;
     float maxDistance = 100f;
     float zoomSpeed = 5f;
     //The speed which we move the camera
