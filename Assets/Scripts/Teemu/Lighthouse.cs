@@ -7,6 +7,8 @@ public class Lighthouse : MonoBehaviour
     [SerializeField] Transform light;
     [SerializeField] DayNightCycle timeOfDay;
 
+    [SerializeField] float rotateSpeed = 10.0f;
+
     [SerializeField] GameObject lightBulb1;
     [SerializeField] GameObject lightBulb2;
 
@@ -40,8 +42,7 @@ public class Lighthouse : MonoBehaviour
                 lightBulb2.SetActive(true);
             }
 
-            light.Rotate(0, 0.1f, 0);
+            light.Rotate(0, Time.deltaTime * rotateSpeed, 0);
         }
-
     }
 }

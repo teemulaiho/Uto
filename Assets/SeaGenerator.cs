@@ -7,6 +7,9 @@ public class SeaGenerator : MonoBehaviour
     static int width = 20;
     static int height = 20;
 
+    [SerializeField] bool initWater = false;
+    [SerializeField] bool initLighthouse = false;
+
     [SerializeField] GameObject water;
     [SerializeField] Lighthouse lightHouse;
     //[SerializeField] GameObject[] waterArr = new GameObject[width * height];
@@ -32,8 +35,11 @@ public class SeaGenerator : MonoBehaviour
         GameObject lightHouseParent = new GameObject("LIGHTHOUSES");
         for (int i = 0; i < width * height; i++)
         {
-            InitWater(i, seaGridParent);
-            InitLightHouses(i, lightHouseParent);
+            if (initWater)
+                InitWater(i, seaGridParent);
+            
+            if (initLighthouse)
+                InitLightHouses(i, lightHouseParent);
         }
     }
 

@@ -236,6 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   light: {fileID: 4319506071178429138}
   timeOfDay: {fileID: 0}
+  rotateSpeed: 20
   lightBulb1: {fileID: 4319506069961957482}
   lightBulb2: {fileID: 4319506071431043382}
 --- !u!1 &4319506071178429137
