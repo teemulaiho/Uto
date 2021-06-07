@@ -9,7 +9,7 @@ public class RotateAroundCam : MonoBehaviour
     //The height, if we dont want to look at the center position of the object
     private float heightOffset = 1f;
     //The distance from the camera to the object we look at
-	float distanceToObject = 50f;
+	float distanceToObject = 10f;
     //The min and max distance for zooming
     float minDistance = 5f;
     float maxDistance = 100f;

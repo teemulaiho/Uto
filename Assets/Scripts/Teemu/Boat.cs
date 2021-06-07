@@ -26,7 +26,7 @@ public class Boat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     private void FixedUpdate()
@@ -81,9 +81,11 @@ public class Boat : MonoBehaviour
     void Steer()
     {
         //Steer left
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) ||
+            Input.GetKey(KeyCode.RightArrow))
         {
-            rudder_Y = rudder.localEulerAngles.y + 0.1f;
+            //rudder_Y = rudder.localEulerAngles.y + 1f;
+            rudder_Y = rudder.localEulerAngles.y + movementSpeed * 50f * Time.deltaTime;
 
             if (rudder_Y > 30f && rudder_Y < 270f)
             {
@@ -95,9 +97,11 @@ public class Boat : MonoBehaviour
             rudder.localEulerAngles = newRotation;
         }
         //Steer right
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A) ||
+                 Input.GetKey(KeyCode.LeftArrow))
         {
-            rudder_Y = rudder.localEulerAngles.y - 0.1f;
+            //rudder_Y = rudder.localEulerAngles.y - 1f;
+            rudder_Y = rudder.localEulerAngles.y - movementSpeed * 50f * Time.deltaTime;
 
             if (rudder_Y < 330f && rudder_Y > 90f)
             {
@@ -108,5 +112,46 @@ public class Boat : MonoBehaviour
 
             rudder.localEulerAngles = newRotation;
         }
+        else
+        {
+            RudderRotateToCenter();
+        }
+    }
+
+    void RudderRotateToCenter()
+    {
+        rudder_Y = rudder.localEulerAngles.y;
+
+        if (rudder_Y < 0.25f || rudder_Y > 359.75f) return;
+
+        if (rudder_Y > 0f && rudder_Y < 180f)
+        {
+            rudder_Y = Mathf.Lerp(rudder_Y, 0f, Time.deltaTime * movementSpeed);
+        }
+        else if (rudder_Y >= 180f)
+        {
+            rudder_Y = Mathf.Lerp(rudder_Y, 360f, Time.deltaTime * movementSpeed);
+        }
+
+        Vector3 newRotation = new Vector3(0f, rudder_Y, 0f);
+        rudder.localEulerAngles = newRotation;
+
+
+
+        //if (rudder_Y > -0.5f && rudder_Y < 0.5f)
+        //{
+        //    return;
+        //}
+
+        //if (rudder_Y <= 180)
+        //    rudder_Y = rudder.localEulerAngles.y - movementSpeed * 10f * Time.deltaTime;
+        //else if (rudder_Y > 180)
+        //    rudder_Y = rudder.localEulerAngles.y + movementSpeed * 10f * Time.deltaTime;
+
+        //print(rudder_Y);
+
+        //Vector3 newRotation = new Vector3(0f, rudder_Y, 0f);
+
+        //rudder.localEulerAngles = newRotation;
     }
 }
