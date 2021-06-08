@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Boat : MonoBehaviour
 {
-
+    public bool Driver { get; set; } = false;
+    //public GetDriver(Get,)
     Rigidbody body;
     Vector2 movementInput;
     public Vector2 GetMovementInput() { return movementInput; }
@@ -31,7 +32,8 @@ public class Boat : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move(movementInput);
+        if (Driver)
+            Move(movementInput);
     }
 
     // Update is called once per frame
@@ -68,8 +70,6 @@ public class Boat : MonoBehaviour
         body.AddTorque(Vector3.up * yTorque, ForceMode.VelocityChange);
 
         DriftCompensation(localVelocity);
-
-
     }
 
     private void DriftCompensation(Vector3 localVelocity)

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1179994380833742710}
   - component: {fileID: 1179994380833742709}
   - component: {fileID: 1179994380833742706}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 1179994380967786893}
   - component: {fileID: 1179994380967786888}
   - component: {fileID: 1179994380967786891}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 1179994381580732528}
   - component: {fileID: 1179994381580732526}
   - component: {fileID: 1179994381580732529}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnderwaterMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 1179994381948995468}
   - component: {fileID: 1179994381948995471}
   - component: {fileID: 1179994381948995470}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
